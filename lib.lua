@@ -123,7 +123,7 @@ function Lib:NewNotif(player, title, body, buttons)
 
 	local function Close()
 		Closed = true
-		Main:TweenPosition(UDim2.new(1.1, 0, 0.792, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, .5, true)
+		Main:TweenPosition(UDim2.new(1.1, 0, 0.6, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, .5, true)
 		wait(.6)
 		Notification:Destroy()
 	end
