@@ -42,7 +42,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Main.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
 	Main.Position = UDim2.new(1.1, 0, 0.792, 0)
 	Main.Size = UDim2.new(0.202970296, 0, 0.196539178, 0)
-	Main.ZIndex = 100000
+	Main.ZIndex = 2147483647
 
 	Head.Name = "Head"
 	Head.Parent = Main
