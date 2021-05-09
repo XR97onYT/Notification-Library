@@ -1,6 +1,6 @@
 local Lib = {}
 
-function Lib.NewNotif(player, title, body, buttons)
+function Lib:NewNotif(player, title, body, buttons)
 	local Closed = false
 	
 	if not title then title = "Title" end
