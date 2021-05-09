@@ -42,7 +42,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Main.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
 	Main.Position = UDim2.new(1.1, 0, 0.6, 0)
 	Main.Size = UDim2.new(0.202970296, 0, 0.196539178, 0)
-	Main.ZIndex = 2147483647
+	Main.ZIndex = 2147483646
 
 	Head.Name = "Head"
 	Head.Parent = Main
@@ -55,6 +55,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Head.TextScaled = true
 	Head.TextSize = 14.000
 	Head.TextWrapped = true
+	Head.ZIndex = 2147483647
 
 	Body.Name = "Body"
 	Body.Parent = Main
@@ -68,6 +69,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Body.TextScaled = true
 	Body.TextSize = 14.000
 	Body.TextWrapped = true
+	Body.ZIndex = 2147483647
 
 	Buttons1.Name = "Buttons1"
 	Buttons1.Parent = Main
@@ -76,6 +78,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Buttons1.Position = UDim2.new(0, 0, 0.720944762, 0)
 	Buttons1.Size = UDim2.new(1, 0, 0.278036356, 0)
 	Buttons1.Visible = false
+	Buttons1.ZIndex = 2147483647
 
 	Button.Name = "Button"
 	Button.Parent = Buttons1
@@ -87,6 +90,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Button.TextScaled = true
 	Button.TextSize = 14.000
 	Button.TextWrapped = true
+	Button.ZIndex = 2147483647
 
 	Buttons2.Name = "Buttons2"
 	Buttons2.Parent = Main
@@ -95,6 +99,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Buttons2.Position = UDim2.new(0, 0, 0.720944762, 0)
 	Buttons2.Size = UDim2.new(1, 0, 0.278036356, 0)
 	Buttons2.Visible = false
+	Buttons2.ZIndex = 2147483647
 
 	Button_2.Name = "Button"
 	Button_2.Parent = Buttons2
@@ -106,6 +111,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Button_2.TextScaled = true
 	Button_2.TextSize = 14.000
 	Button_2.TextWrapped = true
+	Button_2.ZIndex = 2147483647
 
 	Button2.Name = "Button2"
 	Button2.Parent = Buttons2
@@ -118,8 +124,9 @@ function Lib:NewNotif(player, title, body, buttons)
 	Button2.TextScaled = true
 	Button2.TextSize = 14.000
 	Button2.TextWrapped = true
+	Button2.ZIndex = 2147483647
 
-	Main:TweenPosition(UDim2.new(0.791, 0, 0.792, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, .5, true)
+	Main:TweenPosition(UDim2.new(0.791, 0, 0.6, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, .5, true)
 
 	local function Close()
 		Closed = true
