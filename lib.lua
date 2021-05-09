@@ -1,6 +1,7 @@
 local Lib = {}
 
 function Lib:NewNotif(player, title, body, buttons)
+    local x,y = pcall(function()
 	local Closed = false
 	
 	if not title then title = "Title" end
@@ -155,6 +156,9 @@ function Lib:NewNotif(player, title, body, buttons)
 		wait(10)
 		if not Closed then Close() end
 	end)
+    end)
+	
+    return y
 end
 
 return Lib
