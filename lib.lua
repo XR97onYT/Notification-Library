@@ -3,8 +3,8 @@ local Lib = {}
 function Lib:NewNotif(player, title, body, buttons)
 	local Closed = false
 	
-	if not title then title = "Title" end
-	if not body then body = "Body" end
+	if not title or not type(title) == "string" then title = "Title" end
+	if not body or not type(body) == "string" then body = "Body" end --Checking if there's values
 
 	local Notification = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
@@ -126,22 +126,24 @@ function Lib:NewNotif(player, title, body, buttons)
 	Button2.ZIndex = 2147483647
 
 	Main:TweenPosition(UDim2.new(0.791, 0, 0.6, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, .5, true)
+	
+	--Notification comes out the bottom right side of the screen
 
 	local function Close()
 		Closed = true
 		Main:TweenPosition(UDim2.new(1.1, 0, 0.6, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, .5, true)
 		wait(.6)
 		Notification:Destroy()
-	end
+	end --Guess what this does...
 
 	if buttons and type(buttons) == "table" then
-		pcall(function()
+		pcall(function() --Use a protected call just incase Text or func in one of the tables is nil or wrong type
 			if #buttons == 1 then
-				Button.Text = buttons[1].Text
+				Button.Text = buttons[1].Text --Button text
 				Button.MouseButton1Click:Connect(function()
 					if buttons[1]["func"] then if type(buttons[1]["func"]) == "function" then buttons[1]["func"]() end end
 					Close()
-				end)
+				end) --Calling the function of the button if there is one, then close the notif
 				Buttons1.Visible = true
 			elseif #buttons == 2 then
 				Button_2.Text = buttons[1].Text
