@@ -1,6 +1,7 @@
 local Lib = {}
 
-function Lib:NewNotif(player, title, body, buttons)
+function Lib:NewNotif(player, title, body, buttons, isFPS)
+	if isFPS and type(isFPS) ~= "boolean" then isFPS = false end
 	local Closed = false
 	
 	if not title or not type(title) == "string" then title = "Title" end
@@ -42,6 +43,7 @@ function Lib:NewNotif(player, title, body, buttons)
 	Main.Position = UDim2.new(1.1, 0, 0.6, 0)
 	Main.Size = UDim2.new(0.202970296, 0, 0.196539178, 0)
 	Main.ZIndex = 2147483646
+	Main.Modal = isFPS
 
 	Head.Name = "Head"
 	Head.Parent = Main
