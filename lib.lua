@@ -1,7 +1,13 @@
 local Lib = {}
 
 function Lib:NewNotif(player, title, body, buttons, isFPS)
-	if isFPS and type(isFPS) ~= "boolean" then isFPS = false end
+	if isFPS then
+		if type(isFPS) == "boolean" then
+			game:GetService("UserInputService").MouseIconEnabled = isFPS
+		else
+			isFPS = false
+		end
+	end
 	local Closed = false
 	
 	if not title or not type(title) == "string" then title = "Title" end
@@ -43,7 +49,6 @@ function Lib:NewNotif(player, title, body, buttons, isFPS)
 	Main.Position = UDim2.new(1.1, 0, 0.6, 0)
 	Main.Size = UDim2.new(0.202970296, 0, 0.196539178, 0)
 	Main.ZIndex = 2147483646
-	Main.Modal = isFPS
 
 	Head.Name = "Head"
 	Head.Parent = Main
@@ -92,6 +97,7 @@ function Lib:NewNotif(player, title, body, buttons, isFPS)
 	Button.TextSize = 14.000
 	Button.TextWrapped = true
 	Button.ZIndex = 2147483647
+	Button.Modal = isFPS
 
 	Buttons2.Name = "Buttons2"
 	Buttons2.Parent = Main
@@ -113,6 +119,7 @@ function Lib:NewNotif(player, title, body, buttons, isFPS)
 	Button_2.TextSize = 14.000
 	Button_2.TextWrapped = true
 	Button_2.ZIndex = 2147483647
+	Button_2.Modal = isFPS
 
 	Button2.Name = "Button2"
 	Button2.Parent = Buttons2
@@ -126,6 +133,7 @@ function Lib:NewNotif(player, title, body, buttons, isFPS)
 	Button2.TextSize = 14.000
 	Button2.TextWrapped = true
 	Button2.ZIndex = 2147483647
+	Button2.Modal = isFPS
 
 	Main:TweenPosition(UDim2.new(0.791, 0, 0.6, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, .5, true)
 	
